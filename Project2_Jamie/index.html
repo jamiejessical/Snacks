@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks From Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.jss" defer></script>
+</head>
+<body>
+    <section id="main">
+        <div class="containerMain">
+            <h1>
+                SNACKS<br>FROM HOME
+                <img id="asset2" src="img/Asset 2.png" width="29%" alt="">
+                <img id="asset3" src="img/Asset 3.png" width="13%" alt="">
+                <img id="asset4" src="img/Asset 4.png" width="13%" alt="">
+                <img id="asset5" src="img/Asset 5.png" width="11%" alt="">
+                <img id="asset1" src="img/Asset 1.png" width="16%" alt="">
+                <img id="asset6" src="img/Asset 6.png" width="4%" alt="">
+                <img id="asset7" src="img/Asset 6.png" width="4%" alt="">
+                <p>These old school snacks have their origins in neighboring countries, but have come to define  our childhood memories growing up in Singapore.</p>
+            </h1>
+            <a href="#content" onclick="toggleContent()"><h2>↓</h2></a>
+        </div>
+    </section>
+    <section id="content">
+        <div class="containerContent">
+            <div class="vendingMachine">
+                <div id="gridContainer"></div>
+                <div class="panel">
+                    <div class="screen">
+                        <h3>Pick your snack!</h3>
+                    </div>
+                    <div id="filterButtons">
+                        <div>
+                            <h4>BY YEAR:</h4>
+                            <button id="button" onclick="filterData('< 1970')"> &lt; 1970</button>
+                            <button id="button" onclick="filterData('1970s')">1970s</button>
+                            <button id="button" onclick="filterData('1980s')">1980s</button>
+                            <button id="button" onclick="filterData('1990s')">1990s</button>
+                            <button id="button" onclick="filterData('2000s')">2000s</button>
+                        </div>
+                        <div>
+                            <h4>BY TASTE:</h4>
+                            <button id="button" onclick="filterByTaste('sweet')">Sweet</button>
+                            <button id="button" onclick="filterByTaste('salty')">Salty</button>
+                            <button id="button" onclick="filterByTaste('cheesy')">Cheesy</button>
+                            <button id="button" onclick="filterByTaste('spicy')">Spicy</button>
+                        </div>
+                        <br><br>
+                        <div>
+                            <button id="button" onclick="filterByTaste('')">Reset</button>
+
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="vendingMachineBottom">
+                <div class="box">
+                    <div class="cover"></div>
+                    <div class="hole">
+                        <div class="descriptionContainer"></div>
+                        <div class="fallenImage"></div>
+                    </div>
+                    <a href="#content" onclick="toggleContent2()"><h4>BACK UP</h4></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <audio id="audio" src="audio/machine.mp3"></audio>
+</body>
+</html>
