@@ -15,7 +15,7 @@ function toggleContent() {
     if (contentSection.style.display === "none") {
         contentSection.style.display = "block";
         } else {
-        contentSection.style.display = "block";
+        contentSection.style.display = "none";
         }
 }
 
