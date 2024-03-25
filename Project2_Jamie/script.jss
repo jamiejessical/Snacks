@@ -15,12 +15,13 @@ function toggleContent() {
     if (contentSection.style.display === "none") {
         contentSection.style.display = "block";
         } else {
-        contentSection.style.display = "none";
+        contentSection.style.display = "block";
         }
 }
 
 function toggleContent2() {
   var contentSection = document.getElementById("content");
+  var coverDiv = document.getElementById("cover");
     if (contentSection.style.display === "block") {
         contentSection.style.display = "block";
         } else {
@@ -85,12 +86,33 @@ function showItemDescription(item) {
     const fallenImage = document.querySelector('.fallenImage');
     fallenImage.style.backgroundImage = `url(./img/${item.image2})`;
     fallenImage.style.backgroundSize = 'cover';
+
+    const audio = document.getElementById('audio');
+    audio.play();
+
+    const cover = document.querySelector('.cover');
+    if (cover.style.height === '100%') {
+        cover.style.height = '10%';
+    } else {
+        cover.classList.add('animate-height');
+        setTimeout(() => {
+            cover.style.height = '10%';
+            cover.classList.remove('animate-height');
+        }, 2000);
+    }
 }
 
 function scrollvendingMachineBottom() {
     const vendingMachineBottom = document.querySelector('.vendingMachineBottom');
     vendingMachineBottom.scrollIntoView({ behavior: 'smooth' });
 }
+
+document.querySelectorAll('.priceButton').forEach(button => {
+    button.addEventListener('click', function() {
+        const audio = document.getElementById('audio');
+        audio.play();
+    });
+});
 
 const data = [
     {
@@ -173,14 +195,17 @@ const data = [
     },
     {
         "name": "Pink Dolphin Drink", "taste": "sweet", "year": "1990s", "origin": "singapore", "price": "$1.50", "description": "A peach flavoured drink infused with Vitamin C, B6 & B12 that was a popular go to drink for students.", "image": "pinkDolphin.png", "image2": "pinkDolphin2.png"
+    },
+    {
+        "name": "Ooh Mala Snacks", "taste": "spicy", "year": "2000s", "origin": "singapore", "price": "$3.50", "description": "Ooh is a brand of spicy mala flavoured snacks ranging from green peas to crackers and peanuts.", "image": "Mala.png", "image2": "Mala2.png"
+    },
+    {
+        "name": "Sticky Candy", "taste": "sweet", "year": "2000s", "origin": "singapore", "price": "$5.00", "description": "Sticky is Singapore's first brand specialising in  rock candy and was extremely popular among teens in the early 2000s. They use only sugar and water to create customised intricate designs.", "image": "Sticky.png", "image2": "Sticky2.png"
+    },
+    {
+        "name": "Anything & Whatever", "taste": "sweet", "year": "2000s", "origin": "singapore", "price": "$1.00", "description": "Anything was the fizzy version of Whatever, and both mystery drinks had a range of possible flavours like Cloudy Lemon and White Grape Tea.", "image": "Anything.png", "image2": "Anything2.png"
     }
 ];
 
 filterData('');
 
-document.querySelectorAll('.priceButton').forEach(button => {
-    button.addEventListener('click', function() {
-        const audio = document.getElementById('audio');
-        audio.play();
-    });
-});
