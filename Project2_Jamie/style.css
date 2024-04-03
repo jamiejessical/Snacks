@@ -168,19 +168,37 @@ body {
     overflow: hidden;
 }
 
+
 .descriptionContainer {
     height: 100%;
-    width: 55%;
+    width: 50%;
     margin: 5%;
     transition: ease all .5s;
 }
 
 .fallenImage{
     height: 100%;
-    width: 45%;
+    width: 50%;
     margin-bottom: 0%; 
     box-sizing: border-box;
     transition: ease all .5s;
+}
+
+.animate-scale {
+    animation: scaleUp 0.5s ease forwards;
+    animation-delay: 1s;
+
+}
+
+@keyframes scaleUp {
+    from {
+        transform: translateY(-200px);
+        opacity: 0%;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 100%;
+    }
 }
 
 a[id="content"]:target ~ #content {
@@ -311,26 +329,27 @@ h5 {
     line-height: 90%;
     letter-spacing: 1px;
     text-transform: uppercase;
+    opacity: 0%;
 }
 
 h6 {
     font-family: SouvenirMedium;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     color: white;
     margin: 0px;
     margin-top: 5%;
     margin-bottom: 2%;
-    text-transform: uppercase;
+    opacity: 0%;
 
 }
 
 h7 {
     font-family: SouvenirMedium;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
     color: white;
-    line-height: 110%;
+    line-height: 108%;
     width: 50%;
 }
 
@@ -514,11 +533,11 @@ p {
     }
     
     h6 {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
     
     h7 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .screen {
@@ -545,7 +564,8 @@ p {
     
     .panel {
         float: right;
-        width: 40%;
+        padding-bottom: 30%;
+        width: 70%;
         height: 100%;
         transform: translate(-0.6px);
     }
@@ -566,7 +586,7 @@ p {
 
     .box {
         width: 90%;
-        height: 70%;
+        height: 65%;
         transform: translate(-50%, 22%);
     }
 
@@ -638,6 +658,27 @@ p {
         position: absolute;
         top: 96%;
         left: -2%;
+    }
+
+    #asset8{
+        position: relative;
+        top: 15vh;
+        left: -2vh;
+        transition: ease all .5s;
+    }
+    
+    #asset9{
+        position: relative;
+        top: 30vh;
+        right: -5vh;
+        transition: ease all .5s;
+    }
+    
+    #asset10{
+        position: relative;
+        bottom: 5vh;
+        right: -8vh;
+        transition: ease all .5s;
     }
     
 }
